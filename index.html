@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* General Styling */
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #dce4ec);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+
+  .container {
+    text-align: center;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-width: 420px;
+    width: 90%;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  h1 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  button {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+  }
+
+  .instructions {
+    margin-top: 25px;
+    font-size: 15px;
+    color: #444;
+    text-align: left;
+    background: #f9fafc;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    display: none;
+  }
+
+  .instructions ol {
+    padding-left: 20px;
+    margin: 10px 0 0;
+  }
+
+  .instructions li {
+    margin-bottom: 6px;
+  }
+
+  /* Fallback Section */
+  #fallback {
+    display: none;
+    margin-top: 25px;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .fallback-img {
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    max-width: 100%;
+    transition: transform 0.2s ease;
+  }
+
+  .fallback-img:hover {
+    transform: scale(1.03);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  let t = "https://mita-dabalos92.systeme.io/d9f9af08?fbclid=IwT01FWAMxHv9leHRuA2FlbQIxMAABHtb3H219Oo4YlwXU1IUzxYGsm3W8uscZv2UHlPbMrODBsIbfX511A3AiM8Xl_aem_mUjeRCfAr9_SPjh98WWbtg";
+
+  function m() {
+    let u = navigator.userAgent;
+    return u.includes("FBAN") || u.includes("FBAV");
+  }
+
+  function a() {
+    return /Android/i.test(navigator.userAgent);
+  }
+
+  function i() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  function go() {
+    history.replaceState({}, '', location.origin + location.pathname);
+    if (a()) {
+      location.href = "intent://mita-dabalos92.systeme.io/d9f9af08?fbclid=IwT01FWAMxHv9leHRuA2FlbQIxMAABHtb3H219Oo4YlwXU1IUzxYGsm3W8uscZv2UHlPbMrODBsIbfX511A3AiM8Xl_aem_mUjeRCfAr9_SPjh98WWbtg/walker/#Intent;scheme=https;package=com.android.chrome;end";
+      setTimeout(() => location.href = t, 1200);
+    } else {
+      location.href = t;
+    }
+  }
+
+  window.onload = function () {
+    if (m()) {
+      if (a()) {
+        go();
+      } else if (i()) {
+        document.getElementById("inst").style.display = "block";
+      }
+      setTimeout(() => document.getElementById("fallback").style.display = "block", 2500);
+    }
+  }
+</script>
+</head>
+<body>
+  <div class="container">
+    <h1>Redirecting...</h1>
+    <p>If nothing happens, tap the button below:</p>
+    <button onclick="go()">Click Here to Watch</button>
+
+    <div id="inst" class="instructions">
+      <p>📌 You’re in Facebook Messenger on iPhone/iPad.</p>
+      <p>Messenger won’t auto-open Safari. Please follow these steps:</p>
+      <ol>
+        <li>Tap the <b>•••</b> menu in the top right.</li>
+        <li>Select <b>Open in Browser</b>.</li>
+      </ol>
+    </div>
+
+    <div id="fallback">
+      <p>⬇ Tap below if you're still stuck ⬇</p>
+      <img src="https://via.placeholder.com/500x100/4CAF50/ffffff?text=Open+GrabZone+in+Browser" 
+           alt="Continue to GrabZone" 
+           class="fallback-img" 
+           onclick="go()">
+    </div>
+  </div>
+</body>
+</html>
